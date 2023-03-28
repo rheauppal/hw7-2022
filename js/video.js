@@ -47,12 +47,12 @@ document.querySelector("#mute").addEventListener("click", function() {
 	else if(video.muted==false){document.querySelector("#mute").textContent='Mute';}
 
 });
-//not working
+//
 document.querySelector("#slider").addEventListener("input", function() {
 	video.volume=parseInt(document.querySelector("#slider").value)/100;
-	updateVolume();
-	
 
+	//console.log(video.volume);
+	updateVolume();
 });
 document.querySelector("#vintage").addEventListener("click", function() {
 	video.classList.add('oldSchool');
@@ -62,8 +62,9 @@ document.querySelector("#orig").addEventListener("click", function() {
 });
 
 function updateVolume(){
-	document.querySelector("#volume").textContent=(video.volume*100);
+	document.querySelector("#volume").textContent=(video.volume*100)+"%";
 	console.log(document.querySelector("#volume").textContent);
+	
 }
 // document.querySelector("#play").addEventListener("click", function() {
 // 	console.log("Play Video");
